@@ -1,5 +1,5 @@
 -- สร้างฐานข้อมูล
-CREATE DATABASE getworks_app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE DATABASE IF NOT EXISTS getworks_app CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE getworks_app;
 
 -- ตารางผู้ใช้งาน

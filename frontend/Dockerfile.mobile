@@ -1,0 +1,32 @@
+FROM ghcr.io/cirruslabs/flutter:3.13.9
+
+# สร้าง user flutter
+RUN groupadd -r flutter && useradd -r -g flutter -m flutter
+
+# ตั้ง working directory
+WORKDIR /home/flutter/app/mobile
+
+# คัดลอกโฟลเดอร์ mobile
+COPY mobile/ ./
+
+# ลบ ephemeral folder และสร้างใหม่ด้วย root
+RUN rm -rf /home/flutter/app/mobile/windows/flutter/ephemeral \
+    && mkdir -p /home/flutter/app/mobile/windows/flutter/ephemeral
+
+# แก้ไข initialValue เป็น value อัตโนมัติ (สำหรับ web) ด้วย root
+RUN find . -type f -name "*.dart" -exec sed -i 's/initialValue:/value:/g' {} +
+
+# เปลี่ยนเจ้าของทั้งหมดให้ flutter
+RUN chown -R flutter:flutter /sdks/flutter /home/flutter/app/mobile
+
+# ใช้ user flutter
+USER flutter
+
+# รัน flutter pub get
+RUN flutter pub get
+
+# เปิด port
+EXPOSE 8080
+
+# คำสั่งเริ่ม container
+CMD ["flutter", "run", "-d", "web-server", "--web-hostname=0.0.0.0", "--web-port=8080"]

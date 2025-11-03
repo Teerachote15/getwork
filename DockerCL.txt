@@ -1,0 +1,22 @@
+คำสั่ง build test
+docker build -t my-ai-detectpic .
+docker build -t matching-app .
+docker build -t backend .
+
+compose build
+docker compose build
+docker run --rm -P --name mycontainer getwork-app
+
+
+คำสั่ง run test
+docker run --rm -P --name mycontainer my-ai-detectpic
+docker run --rm -P --name mycontainer matching-app
+docker run --rm -P --name mycontainer backend
+
+
+docker build -t myfrontend-web -f Dockerfile.web .
+docker run --rm -it -p 5173:5173 myfrontend-web  
+
+
+docker build -t my_flutter_app -f Dockerfile.mobile .
+docker run -it -p 8080:8080 my_flutter_app

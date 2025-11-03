@@ -1,0 +1,111 @@
+name: Getwork-App
+
+services:
+  # ------------------ FRONTEND WEB ------------------
+  web:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile.web
+    container_name: getwork-web
+    ports:
+      - "5173:5173"
+    command: npm run dev
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  # ------------------ FRONTEND MOBILE (Flutter Web) ------------------
+  mobile:
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile.mobile
+    container_name: getwork-mobile
+    ports:
+      - "8080:8080"
+    # ใช้ CMD ใน Dockerfile ของ Flutter Web
+    # ไม่จำเป็นต้อง override command ถ้า Dockerfile มี CMD อยู่แล้ว
+    depends_on: 
+      - backend
+    networks:
+      - app-network
+
+  # ------------------ BACKEND ------------------
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: getwork-backend
+    ports:
+      - "4000:4000"
+    command: ["npm", "run", "dev"]
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  # ------------------ AI: Picture Detection ------------------
+  detectpic:
+    build:
+      context: ./backend/AI/PictureDetect
+      dockerfile: Dockerfile
+    container_name: getwork-detectpic
+    ports:
+      - "5000:5000"
+    command: python api.py
+    env_file:
+      - ./backend/.env
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  # ------------------ AI: Matching ------------------
+  matching:
+    build:
+      context: ./backend/AI/Matching
+      dockerfile: Dockerfile
+    container_name: getwork-matching
+    ports:
+    - "8000:8000"
+    command: ["uvicorn", "model.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"]
+    env_file:
+    - ./backend/.env
+    depends_on:
+    - db
+    networks:
+    - app-network
+
+
+
+
+  # ------------------ DATABASE ------------------
+  db:
+    image: mysql:8.0
+    container_name: getwork-db
+    restart: always
+    build:
+      context: ./backend/database
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_USER: mysql              # ชื่อ user ที่คุณต้องการสร้าง
+      MYSQL_PASSWORD: 1234      # รหัสผ่านสำหรับ user
+      MYSQL_DATABASE: getworks_app
+    env_file:
+      - ./backend/.env
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+# ------------------ NETWORK + VOLUME ------------------
+networks:
+  app-network:
+
+volumes:
+  db_data:

@@ -1,0 +1,17 @@
+# ================= Dockerfile.web (อัปเดตแล้ว) =================
+FROM node:20-alpine AS dev
+
+WORKDIR /app
+
+# คัดลอกเฉพาะ package.json ก่อน (เพื่อใช้ layer cache)
+COPY web1/package*.json ./
+
+RUN npm install
+
+# คัดลอกซอร์สโค้ดทั้งหมดของ web1
+COPY web1/ .
+
+# เปิดพอร์ต dev server (ปรับได้ตาม framework)
+EXPOSE 5173
+
+CMD ["npm", "run", "dev", "--", "-H", "0.0.0.0"]
