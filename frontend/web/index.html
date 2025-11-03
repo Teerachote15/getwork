@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="$FLUTTER_BASE_HREF">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="getwork_app">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>เข้าสู่ระบบ - GetWork Web</title>
+  <link rel="manifest" href="manifest.json">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-[#7B668C] min-h-screen flex items-center justify-center">
+  <div class="w-full max-w-2xl mx-auto bg-white rounded-xl shadow-lg">
+    <!-- Header -->
+    <div class="flex items-center justify-between bg-[#3A5A99] rounded-t-xl px-8 py-4">
+      <div class="flex items-center gap-2">
+        <img src="../mobile/assets/images/homepage.png" alt="logo" class="w-10 h-10 rounded-full bg-white p-1"/>
+        <span class="text-white font-bold text-lg">Get Work!</span>
+      </div>
+      <nav class="flex gap-8 text-white font-semibold">
+        <a href="#" class="hover:underline">โพสรออนุมัติ</a>
+        <a href="#" class="hover:underline">บัญชีผู้ใช้</a>
+        <a href="#" class="hover:underline">ระบบการเงิน</a>
+        <a href="#" class="hover:underline">เข้าสู่ระบบ</a>
+      </nav>
+    </div>
+    <!-- Login Form -->
+    <div class="flex flex-col items-center py-16 px-8">
+      <h2 class="text-3xl font-bold text-[#22577A] mb-8">เข้าสู่ระบบ</h2>
+      <form class="w-full max-w-md space-y-6">
+        <div>
+          <label class="block text-[#22577A] font-semibold mb-2" for="username">ชื่อผู้ใช้งาน</label>
+          <input id="username" type="text" class="w-full rounded-full border border-gray-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#3A5A99] shadow-sm" />
+        </div>
+        <div>
+          <label class="block text-[#22577A] font-semibold mb-2" for="password">รหัสผ่าน</label>
+          <div class="relative">
+            <input id="password" type="password" class="w-full rounded-full border border-gray-200 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-[#3A5A99] shadow-sm" />
+            <span class="absolute right-4 top-2.5 text-gray-400 cursor-pointer select-none">&#128065;</span>
+          </div>
+        </div>
+        <button type="button" class="w-full mt-8 rounded-full bg-white border border-[#A3A3A3] text-[#22577A] font-bold text-xl py-2 shadow hover:bg-[#F0F0F0] transition">
+          เข้าสู่ระบบ
+        </button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

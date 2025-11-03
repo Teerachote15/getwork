@@ -1,0 +1,185 @@
+/* CSS module for admin account user page */
+:root {
+  --teal: #2c6d7a;
+  --muted: #e9eef0;
+  --yellow: #ffe066;
+  --yellow-text: #7a6a00;
+  --red: #e53935;
+  --gray: #bdbdbd;
+}
+
+.pageWrap {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.topbar {
+  height: 72px;
+  background: var(--teal);
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  font-weight: 700;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.06);
+  font-size: 18px;
+}
+
+.nav {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.navItem {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 8px 4px 8px;
+  border-bottom: 3px solid transparent;
+  transition: border 0.2s;
+}
+
+.navItemActive {
+  border-bottom: 3px solid #fff;
+  font-weight: 600;
+}
+
+.logoutBtn {
+  color: #fff;
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+.container {
+  flex: 1;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pageTitle {
+  color: var(--teal);
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.searchBox {
+  width: 340px;
+  max-width: 90vw;
+  margin: 0 auto 18px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.searchInput {
+  width: 100%;
+  border-radius: 18px;
+  border: 1px solid #d6d6d6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.10);
+  outline: none;
+  font-size: 18px;
+  padding: 12px 22px;
+  background: #fff;
+}
+
+.tableWrap {
+  width: 100%;
+  max-width: 1100px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18px;
+}
+
+.thead {
+  background: var(--muted);
+}
+
+.th, .td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.th {
+  color: var(--teal);
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.userCell {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  display: inline-block;
+}
+
+.btnCheck {
+  background: var(--yellow);
+  color: var(--yellow-text);
+  border: none;
+  border-radius: 18px;
+  padding: 6px 22px;
+  font-size: 17px;
+  font-weight: 500;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+.btnBan {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 22px;
+  font-size: 17px;
+  font-weight: 500;
+  margin: 0 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .container, .tableWrap { max-width: 100%; }
+  .table { font-size: 15px; }
+  .th { font-size: 16px; }
+  .searchBox { width: 100%; }
+}

@@ -1,0 +1,123 @@
+/* Styles for admin login page to match provided design */
+:root{
+  --teal:#2c6d7a;
+  --muted:#e9eef0;
+  --accent:#6b4d6b; /* subtle purple frame color (used as page border) */
+}
+
+.pageWrap{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  /* border:6px solid var(--accent); */
+  box-sizing:border-box;
+  background:#ffffff;
+}
+
+.topbar{
+  height:72px;
+  background:var(--teal);
+  display:flex;
+  align-items:center;
+  padding:12px 20px;
+}
+
+.logo{
+  width:56px;
+  height:56px;
+  background:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--teal);
+  font-weight:700;
+  box-shadow:0 2px 0 rgba(0,0,0,0.06);
+}
+
+.container{
+  flex:1;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  padding:48px 20px;
+}
+
+.card{
+  width:640px;
+  max-width:90%;
+  background:transparent; /* page shows white background, form elements float */
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  padding-top:8px;
+}
+
+.title{
+  text-align:center;
+  color:var(--teal);
+  font-size:32px;
+  margin:18px 0 28px 0;
+  font-weight:600;
+}
+
+.fieldLabel{
+  color:var(--teal);
+  margin-left:36px;
+  margin-bottom:6px;
+  font-size:16px;
+}
+
+.inputRow{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+}
+
+.input{
+  width:520px;
+  max-width:calc(100% - 80px);
+  height:40px;
+  padding:8px 18px;
+  border-radius:22px;
+  border:1px solid #d6d6d6;
+  box-shadow:0 2px 0 rgba(0,0,0,0.06);
+  outline:none;
+  font-size:14px;
+}
+
+.eyeBtn{
+  width:44px;
+  height:36px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  border:0;
+  cursor:pointer;
+  margin-left:-60px; /* position over right side of input */
+}
+
+.actions{
+  margin-top:48px;
+  display:flex;
+  justify-content:center;
+}
+
+.submitBtn{
+  background:#fff;
+  color:var(--teal);
+  border:1px solid #d6d6d6;
+  padding:14px 36px;
+  border-radius:28px;
+  font-size:18px;
+  box-shadow:0 2px 0 rgba(0,0,0,0.08);
+  cursor:pointer;
+}
+
+@media (max-width:640px){
+  .input{ width:100%; }
+  .eyeBtn{ margin-left:-56px; }
+  .card{ width:100%; }
+}

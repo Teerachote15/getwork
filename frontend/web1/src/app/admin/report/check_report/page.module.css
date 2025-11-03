@@ -1,0 +1,105 @@
+/* CSS for admin report detail page */
+:root{
+  --teal:#2c6d7a;
+  --muted:#e9eef0;
+  --green:#43a047;
+  --shadow: rgba(0,0,0,0.12);
+}
+
+.pageWrap{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+}
+
+.topbar{
+  height:72px;
+  background:var(--teal);
+  display:flex;
+  align-items:center;
+  padding:12px 20px;
+  justify-content:space-between;
+}
+
+.logo{
+  width:56px;
+  height:56px;
+  background:#fff;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--teal);
+  font-weight:700;
+  box-shadow:0 2px 0 rgba(0,0,0,0.06);
+}
+
+.nav{ display:flex; gap:36px; align-items:center; margin-left:40px; }
+.navItem{ color:#fff; font-size:20px; background:none; border:none; padding:0 8px 4px 8px; border-bottom:3px solid transparent; }
+.navItemActive{ border-bottom:3px solid #fff; font-weight:600; }
+
+.container{
+  flex:1;
+  padding:32px 24px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.backBtn{
+  background:var(--green);
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  padding:10px 20px;
+  font-size:16px;
+  margin-right:auto;
+  margin-left:32px;
+  box-shadow:0 4px 8px var(--shadow);
+  cursor:pointer;
+}
+
+.title{
+  color:var(--teal);
+  font-size:28px;
+  margin:10px 0 28px 0;
+  font-weight:600;
+  text-align:center;
+}
+
+.headBox{
+  width:420px;
+  max-width:80%;
+  padding:18px 24px;
+  border-radius:12px;
+  background:#fff;
+  box-shadow:0 6px 12px var(--shadow);
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:28px;
+}
+
+.headLabel{ color:var(--teal); font-weight:600; }
+.headDots{ margin-left:auto; color:#333; }
+
+.reportBox{
+  width:760px;
+  max-width:92%;
+  min-height:160px;
+  border-radius:12px;
+  padding:18px;
+  background:#fff;
+  box-shadow:0 6px 12px var(--shadow);
+  font-size:16px;
+  color:#222;
+}
+
+.reportHeader{ color:var(--teal); font-weight:600; margin-bottom:8px; }
+
+@media (max-width:800px){
+  .reportBox{ width:100%; }
+  .headBox{ width:320px; }
+  .backBtn{ margin-left:12px; }
+}

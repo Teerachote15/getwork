@@ -1,0 +1,1 @@
+// placeholder\nvoid temp() {}

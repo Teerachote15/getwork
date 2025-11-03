@@ -1,0 +1,36 @@
+#คำสั่ง run
+python model.py
+python api.py
+
+แหล่งข้อมูลที่นำมาเทรน
+
+Class Safe
+https://www.kaggle.com/datasets/samuelcortinhas/cats-and-dogs-image-classification รูปหมาแมว 200 รูป
+
+https://www.kaggle.com/datasets/abdulmananraja/real-life-violence-situations  รูป non-violence 200 รูป
+
+https://www.kaggle.com/datasets/soumikrakshit/anime-faces รูปหน้าตัวละครในการ์ตูน 100 รูป
+
+https://universe.roboflow.com/fs-ijsb6/violence_detector/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true
+
+Class Violence
+https://www.kaggle.com/datasets/abdulmananraja/real-life-violence-situations รูป violence 200 รูป
+
+https://universe.roboflow.com/fs-ijsb6/violence_detector/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true
+ 
+https://www.kaggle.com/datasets/usamasaeed451/gun-images-dataset รูปอาวุธ 100 รูป
+
+เอามาจากใน google 100 รูป
+
+Class Nude
+https://figshare.com/articles/dataset/Adult_content_dataset/13456484?file=25843427
+
+https://universe.roboflow.com/choiceannotation/ground-truth-ou7li
+
+เอาใน google 100รูป
+
+ข้อมูล Test 
+บางdata set มีรูป Test ให้ก็เอาจากตรงนั้นมาส่วนนึง
+กับเอาใน google มา Test
+
+ได้ทำการเทสไป 33 รูป ผิดพลาด 10 รูปเหตุผลอาจจะมาจากภาพที่ไม่ชัดและภาพมีขนดใหญ่เกินไปไม่ได้ crop หรือเป็นภาพขาวดำ

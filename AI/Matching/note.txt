@@ -1,0 +1,6 @@
+คำสั่ง run
+uvicorn model.main:app --reload
+
+ในส่วนของการเทส ใช้ข้อมูล จาก csv ที่ mock ขึ้นมา ข้อมูล 10 บรรทัดการ match ก็โอเค เวลาเอาไปใช้จริง จะใช้ข้อมูลจาก ใน data base มา match 
+
+

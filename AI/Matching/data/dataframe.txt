@@ -1,0 +1,2 @@
+| freelancer_id | about_me | work_experience | rate | rating | job_count | ... |
+| ------------- | -------- | --------------- | ---- | ------ | --------- | --- |

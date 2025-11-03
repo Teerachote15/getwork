@@ -1,0 +1,11 @@
+freelancer_id,name,about_me,work_experience,post_titles,post_details,rate,avg_rating,job_count,location
+1,Somchai Dev,"Senior React developer, love building dashboards and admin tools","5 years: built e-commerce, dashboards using React and Node","Frontend Developer","Built admin dashboards, auth, REST API integration","30000",4.7,20,Bangkok
+2,Suda Designer,"UI/UX designer, Figma enthusiast, mobile-first designs","4 years: mobile apps and fintech UX","UI/UX Designer","Designed onboarding flows and dashboards for fintech startups","25000",4.5,15,Chiang Mai
+3,Pong Backend,"Python backend developer, django, fastapi","6 years: APIs, microservices, background workers","Backend Developer","Built scalable APIs, payment integrations, worker queues","35000",4.8,30,Bangkok
+4,Aom Fullstack,"Fullstack dev: React + Django, product-minded","3 years: small startups, dashboards, admin panels","Fullstack Developer","Built MVPs and admin dashboards, integrated analytics","28000",4.2,10,Phuket
+5,Nat Mobile,"Flutter dev, cross-platform apps","2 years: e-commerce, social apps","Mobile Developer","Delivered chat and payment features in mobile apps","22000",4.0,8,Bangkok
+6,Kai Data,"Data scientist, ETL, data visualization","4 years: analytics, reporting, tableau, SQL","Data Scientist","Built reporting pipelines and dashboards for ops teams","30000",4.6,12,Chiang Mai
+7,May Translator,"Professional translator (EN-TH) and content writer","5 years: localization, documentation, SEO content","Translator","Translated product docs and marketing content","18000",4.3,25,Bangkok
+8,Tak DevOps,"DevOps engineer: docker, k8s, aws","3 years: CI/CD, infra automation","DevOps Engineer","Set up CI pipelines and monitoring for production apps","32000",4.4,9,Bangkok
+9,Noi Designer,"Graphic designer, brand identity","6 years: logos, branding, print & digital","Graphic Designer","Brand identity, packaging design, product marketing assets","24000",4.6,18,Phuket
+10,Ploy Frontend,"React + TypeScript developer, storybook, component libs","4 years: product UI, design systems","Frontend Developer","Built component libraries and responsive UIs","31000",4.5,14,Bangkok
